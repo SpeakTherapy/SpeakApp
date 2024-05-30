@@ -14,7 +14,7 @@ class AuthViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     
     func signup(name: String, email: String, password: String, role: UserRole) {
-        let user = User(name: name, email: email, passwordHash: password, role: role)
+        let user = User(name: name, email: email, passwordHash: password, role: role, referenceCode: "")
         APIService.shared.signup(user: user)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in

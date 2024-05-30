@@ -11,9 +11,21 @@ struct LoginView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
     @State private var email = ""
     @State private var password = ""
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         VStack {
+            HStack {
+                BackButton()
+                Spacer()
+            }
+            Spacer()
+            
+            Text("Login")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .padding(.bottom, 20)
+            
             TextField("Email", text: $email)
                 .autocapitalization(.none)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -37,11 +49,13 @@ struct LoginView: View {
             NavigationLink(destination: SignupView().environmentObject(authViewModel)) {
                 Text("Don't have an account? Sign up")
             }
+            
+            Spacer()
         }
-        .navigationTitle("Login")
+        .navigationBarHidden(true)
     }
 }
 
-//#Preview {
-//    LoginView()
-//}
+#Preview {
+    LoginView()
+}

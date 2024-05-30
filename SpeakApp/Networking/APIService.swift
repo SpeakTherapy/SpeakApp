@@ -40,6 +40,20 @@ class APIService {
             .eraseToAnyPublisher()
     }
     
+    func createExercise(exercise: Exercise) -> AnyPublisher<Exercise, Error> {
+        let url = URL(string: "\(baseURL)/exercises")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = try? JSONEncoder().encode(exercise)
+        
+        return URLSession.shared.dataTaskPublisher(for: request)
+            .map { $0.data }
+            .decode(type: Exercise.self, decoder: JSONDecoder())
+            .mapError { $0 as Error }
+            .eraseToAnyPublisher()
+    }
+    
     func getExercises() -> AnyPublisher<[Exercise], Error> {
         let url = URL(string: "\(baseURL)/exercises")!
         return URLSession.shared.dataTaskPublisher(for: url)

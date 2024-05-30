@@ -13,6 +13,11 @@
 		B8BE87B02C06F2DD0097DF06 /* ExerciseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BE87AF2C06F2DD0097DF06 /* ExerciseListView.swift */; };
 		B8BE87B22C06F9540097DF06 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BE87B12C06F9540097DF06 /* MainTabView.swift */; };
 		B8BE87B42C06F9770097DF06 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BE87B32C06F9770097DF06 /* ProfileView.swift */; };
+		B8BE87B62C0925C60097DF06 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BE87B52C0925C60097DF06 /* SplashScreenView.swift */; };
+		B8BE87B82C092A620097DF06 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BE87B72C092A620097DF06 /* LandingView.swift */; };
+		B8BE87BB2C092C800097DF06 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BE87BA2C092C800097DF06 /* ColorExtension.swift */; };
+		B8BE87BD2C093A9E0097DF06 /* CreateExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BE87BC2C093A9E0097DF06 /* CreateExerciseView.swift */; };
+		B8BE87C02C093D090097DF06 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BE87BF2C093D090097DF06 /* BackButton.swift */; };
 		B8FA41992BFECCD300DCAA03 /* SpeakApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FA41982BFECCD300DCAA03 /* SpeakApp.swift */; };
 		B8FA419B2BFECCD300DCAA03 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FA419A2BFECCD300DCAA03 /* ContentView.swift */; };
 		B8FA419D2BFECCD500DCAA03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8FA419C2BFECCD500DCAA03 /* Assets.xcassets */; };
@@ -54,6 +59,11 @@
 		B8BE87AF2C06F2DD0097DF06 /* ExerciseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListView.swift; sourceTree = "<group>"; };
 		B8BE87B12C06F9540097DF06 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		B8BE87B32C06F9770097DF06 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		B8BE87B52C0925C60097DF06 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		B8BE87B72C092A620097DF06 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
+		B8BE87BA2C092C800097DF06 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		B8BE87BC2C093A9E0097DF06 /* CreateExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateExerciseView.swift; sourceTree = "<group>"; };
+		B8BE87BF2C093D090097DF06 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		B8FA41952BFECCD300DCAA03 /* SpeakApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeakApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8FA41982BFECCD300DCAA03 /* SpeakApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakApp.swift; sourceTree = "<group>"; };
 		B8FA419A2BFECCD300DCAA03 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -99,6 +109,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B8BE87B92C092C6F0097DF06 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B8BE87BA2C092C800097DF06 /* ColorExtension.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		B8BE87BE2C093CF90097DF06 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B8BE87BF2C093D090097DF06 /* BackButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		B8FA418C2BFECCD300DCAA03 = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +148,8 @@
 		B8FA41972BFECCD300DCAA03 /* SpeakApp */ = {
 			isa = PBXGroup;
 			children = (
+				B8BE87BE2C093CF90097DF06 /* Components */,
+				B8BE87B92C092C6F0097DF06 /* Utils */,
 				B8FA42152C00330900DCAA03 /* Enums */,
 				B8FA42052BFFF95F00DCAA03 /* ViewModels */,
 				B8FA42022BFFF8E600DCAA03 /* Views */,
@@ -195,6 +223,9 @@
 				B8BE87AF2C06F2DD0097DF06 /* ExerciseListView.swift */,
 				B8BE87B12C06F9540097DF06 /* MainTabView.swift */,
 				B8BE87B32C06F9770097DF06 /* ProfileView.swift */,
+				B8BE87B52C0925C60097DF06 /* SplashScreenView.swift */,
+				B8BE87B72C092A620097DF06 /* LandingView.swift */,
+				B8BE87BC2C093A9E0097DF06 /* CreateExerciseView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -348,9 +379,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8BE87B82C092A620097DF06 /* LandingView.swift in Sources */,
+				B8BE87B62C0925C60097DF06 /* SplashScreenView.swift in Sources */,
 				B8BE87AE2C0411400097DF06 /* User.swift in Sources */,
 				B8FA42042BFFF90400DCAA03 /* LoginView.swift in Sources */,
 				B8BE87B02C06F2DD0097DF06 /* ExerciseListView.swift in Sources */,
+				B8BE87C02C093D090097DF06 /* BackButton.swift in Sources */,
 				B8FA419B2BFECCD300DCAA03 /* ContentView.swift in Sources */,
 				B8FA420B2C002B0B00DCAA03 /* ExerciseViewModel.swift in Sources */,
 				B8BE87AC2C0038680097DF06 /* Requests.swift in Sources */,
@@ -360,10 +394,12 @@
 				B8FA41FE2BFFF8A000DCAA03 /* Exercise.swift in Sources */,
 				B8FA42092C0025C800DCAA03 /* SignupView.swift in Sources */,
 				B8FA42012BFFF8D100DCAA03 /* APIService.swift in Sources */,
+				B8BE87BD2C093A9E0097DF06 /* CreateExerciseView.swift in Sources */,
 				B8FA41FC2BFFF88F00DCAA03 /* Patient.swift in Sources */,
 				B8FA42072BFFF96F00DCAA03 /* AuthViewModel.swift in Sources */,
 				B8FA42172C00331500DCAA03 /* UserEnum.swift in Sources */,
 				B8BE87B22C06F9540097DF06 /* MainTabView.swift in Sources */,
+				B8BE87BB2C092C800097DF06 /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

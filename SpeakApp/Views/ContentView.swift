@@ -9,20 +9,33 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var authViewModel = AuthViewModel()
-    
+    @State private var showSplash = true
+
     var body: some View {
         NavigationView {
-            if let user = authViewModel.user {
-                MainTabView()
-                    .environmentObject(authViewModel)
+            if showSplash {
+                SplashScreenView()
+                    .transition(.opacity)
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { // Show splash screen for 3 seconds
+                            withAnimation {
+                                showSplash = false
+                            }
+                        }
+                    }
             } else {
-                LoginView()
-                    .environmentObject(authViewModel)
+                if let user = authViewModel.user {
+                    MainTabView()
+                        .environmentObject(authViewModel)
+                } else {
+                    LandingView()
+                        .environmentObject(authViewModel)
+                }
             }
         }
     }
 }
 
-//#Preview {
-//    ContentView()
-//}
+#Preview {
+    ContentView()
+}
