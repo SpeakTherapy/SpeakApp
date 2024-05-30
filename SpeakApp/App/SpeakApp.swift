@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct SpeakAppApp: App {
+struct SpeakApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

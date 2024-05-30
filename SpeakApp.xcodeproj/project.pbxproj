@@ -7,13 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B8FA41992BFECCD300DCAA03 /* SpeakAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FA41982BFECCD300DCAA03 /* SpeakAppApp.swift */; };
+		B8BE87AA2C0038080097DF06 /* APIErrorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BE87A92C0038080097DF06 /* APIErrorEnum.swift */; };
+		B8BE87AC2C0038680097DF06 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BE87AB2C0038680097DF06 /* Requests.swift */; };
+		B8BE87AE2C0411400097DF06 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BE87AD2C0411400097DF06 /* User.swift */; };
+		B8BE87B02C06F2DD0097DF06 /* ExerciseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BE87AF2C06F2DD0097DF06 /* ExerciseListView.swift */; };
+		B8BE87B22C06F9540097DF06 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BE87B12C06F9540097DF06 /* MainTabView.swift */; };
+		B8BE87B42C06F9770097DF06 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BE87B32C06F9770097DF06 /* ProfileView.swift */; };
+		B8FA41992BFECCD300DCAA03 /* SpeakApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FA41982BFECCD300DCAA03 /* SpeakApp.swift */; };
 		B8FA419B2BFECCD300DCAA03 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FA419A2BFECCD300DCAA03 /* ContentView.swift */; };
 		B8FA419D2BFECCD500DCAA03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8FA419C2BFECCD500DCAA03 /* Assets.xcassets */; };
 		B8FA41A02BFECCD500DCAA03 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8FA419F2BFECCD500DCAA03 /* Preview Assets.xcassets */; };
 		B8FA41AA2BFECCD600DCAA03 /* SpeakAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FA41A92BFECCD600DCAA03 /* SpeakAppTests.swift */; };
 		B8FA41B42BFECCD600DCAA03 /* SpeakAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FA41B32BFECCD600DCAA03 /* SpeakAppUITests.swift */; };
 		B8FA41B62BFECCD600DCAA03 /* SpeakAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FA41B52BFECCD600DCAA03 /* SpeakAppUITestsLaunchTests.swift */; };
+		B8FA41FC2BFFF88F00DCAA03 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FA41FB2BFFF88F00DCAA03 /* Patient.swift */; };
+		B8FA41FE2BFFF8A000DCAA03 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FA41FD2BFFF8A000DCAA03 /* Exercise.swift */; };
+		B8FA42012BFFF8D100DCAA03 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FA42002BFFF8D100DCAA03 /* APIService.swift */; };
+		B8FA42042BFFF90400DCAA03 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FA42032BFFF90400DCAA03 /* LoginView.swift */; };
+		B8FA42072BFFF96F00DCAA03 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FA42062BFFF96F00DCAA03 /* AuthViewModel.swift */; };
+		B8FA42092C0025C800DCAA03 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FA42082C0025C800DCAA03 /* SignupView.swift */; };
+		B8FA420B2C002B0B00DCAA03 /* ExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FA420A2C002B0B00DCAA03 /* ExerciseViewModel.swift */; };
+		B8FA42172C00331500DCAA03 /* UserEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FA42162C00331500DCAA03 /* UserEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,8 +48,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B8BE87A92C0038080097DF06 /* APIErrorEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorEnum.swift; sourceTree = "<group>"; };
+		B8BE87AB2C0038680097DF06 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
+		B8BE87AD2C0411400097DF06 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B8BE87AF2C06F2DD0097DF06 /* ExerciseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListView.swift; sourceTree = "<group>"; };
+		B8BE87B12C06F9540097DF06 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		B8BE87B32C06F9770097DF06 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		B8FA41952BFECCD300DCAA03 /* SpeakApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeakApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B8FA41982BFECCD300DCAA03 /* SpeakAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakAppApp.swift; sourceTree = "<group>"; };
+		B8FA41982BFECCD300DCAA03 /* SpeakApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakApp.swift; sourceTree = "<group>"; };
 		B8FA419A2BFECCD300DCAA03 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B8FA419C2BFECCD500DCAA03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8FA419F2BFECCD500DCAA03 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -44,6 +64,14 @@
 		B8FA41AF2BFECCD600DCAA03 /* SpeakAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeakAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8FA41B32BFECCD600DCAA03 /* SpeakAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakAppUITests.swift; sourceTree = "<group>"; };
 		B8FA41B52BFECCD600DCAA03 /* SpeakAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B8FA41FB2BFFF88F00DCAA03 /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
+		B8FA41FD2BFFF8A000DCAA03 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		B8FA42002BFFF8D100DCAA03 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		B8FA42032BFFF90400DCAA03 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		B8FA42062BFFF96F00DCAA03 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		B8FA42082C0025C800DCAA03 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		B8FA420A2C002B0B00DCAA03 /* ExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewModel.swift; sourceTree = "<group>"; };
+		B8FA42162C00331500DCAA03 /* UserEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +122,14 @@
 		B8FA41972BFECCD300DCAA03 /* SpeakApp */ = {
 			isa = PBXGroup;
 			children = (
-				B8FA41982BFECCD300DCAA03 /* SpeakAppApp.swift */,
-				B8FA419A2BFECCD300DCAA03 /* ContentView.swift */,
-				B8FA419C2BFECCD500DCAA03 /* Assets.xcassets */,
+				B8FA42152C00330900DCAA03 /* Enums */,
+				B8FA42052BFFF95F00DCAA03 /* ViewModels */,
+				B8FA42022BFFF8E600DCAA03 /* Views */,
+				B8FA41FF2BFFF8B700DCAA03 /* Networking */,
+				B8FA41FA2BFFF87D00DCAA03 /* Models */,
+				B8FA41F92BFFF83E00DCAA03 /* App */,
 				B8FA419E2BFECCD500DCAA03 /* Preview Content */,
+				B8FA419C2BFECCD500DCAA03 /* Assets.xcassets */,
 			);
 			path = SpeakApp;
 			sourceTree = "<group>";
@@ -125,6 +157,64 @@
 				B8FA41B52BFECCD600DCAA03 /* SpeakAppUITestsLaunchTests.swift */,
 			);
 			path = SpeakAppUITests;
+			sourceTree = "<group>";
+		};
+		B8FA41F92BFFF83E00DCAA03 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				B8FA41982BFECCD300DCAA03 /* SpeakApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		B8FA41FA2BFFF87D00DCAA03 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B8FA41FB2BFFF88F00DCAA03 /* Patient.swift */,
+				B8FA41FD2BFFF8A000DCAA03 /* Exercise.swift */,
+				B8BE87AB2C0038680097DF06 /* Requests.swift */,
+				B8BE87AD2C0411400097DF06 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B8FA41FF2BFFF8B700DCAA03 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				B8FA42002BFFF8D100DCAA03 /* APIService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		B8FA42022BFFF8E600DCAA03 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B8FA419A2BFECCD300DCAA03 /* ContentView.swift */,
+				B8FA42032BFFF90400DCAA03 /* LoginView.swift */,
+				B8FA42082C0025C800DCAA03 /* SignupView.swift */,
+				B8BE87AF2C06F2DD0097DF06 /* ExerciseListView.swift */,
+				B8BE87B12C06F9540097DF06 /* MainTabView.swift */,
+				B8BE87B32C06F9770097DF06 /* ProfileView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B8FA42052BFFF95F00DCAA03 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B8FA42062BFFF96F00DCAA03 /* AuthViewModel.swift */,
+				B8FA420A2C002B0B00DCAA03 /* ExerciseViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B8FA42152C00330900DCAA03 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				B8FA42162C00331500DCAA03 /* UserEnum.swift */,
+				B8BE87A92C0038080097DF06 /* APIErrorEnum.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +303,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = B8FA418C2BFECCD300DCAA03;
 			productRefGroup = B8FA41962BFECCD300DCAA03 /* Products */;
@@ -257,8 +348,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8BE87AE2C0411400097DF06 /* User.swift in Sources */,
+				B8FA42042BFFF90400DCAA03 /* LoginView.swift in Sources */,
+				B8BE87B02C06F2DD0097DF06 /* ExerciseListView.swift in Sources */,
 				B8FA419B2BFECCD300DCAA03 /* ContentView.swift in Sources */,
-				B8FA41992BFECCD300DCAA03 /* SpeakAppApp.swift in Sources */,
+				B8FA420B2C002B0B00DCAA03 /* ExerciseViewModel.swift in Sources */,
+				B8BE87AC2C0038680097DF06 /* Requests.swift in Sources */,
+				B8FA41992BFECCD300DCAA03 /* SpeakApp.swift in Sources */,
+				B8BE87AA2C0038080097DF06 /* APIErrorEnum.swift in Sources */,
+				B8BE87B42C06F9770097DF06 /* ProfileView.swift in Sources */,
+				B8FA41FE2BFFF8A000DCAA03 /* Exercise.swift in Sources */,
+				B8FA42092C0025C800DCAA03 /* SignupView.swift in Sources */,
+				B8FA42012BFFF8D100DCAA03 /* APIService.swift in Sources */,
+				B8FA41FC2BFFF88F00DCAA03 /* Patient.swift in Sources */,
+				B8FA42072BFFF96F00DCAA03 /* AuthViewModel.swift in Sources */,
+				B8FA42172C00331500DCAA03 /* UserEnum.swift in Sources */,
+				B8BE87B22C06F9540097DF06 /* MainTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +405,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -363,6 +469,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
