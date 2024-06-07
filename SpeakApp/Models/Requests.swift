@@ -9,12 +9,16 @@ import Foundation
 
 struct LoginRequest: Codable {
     var email: String
-    var password: String
+    var passwordHash: String
 }
 
 struct RegisterRequest: Encodable {
     let name: String
     let email: String
-    let password: String
+    let passwordHash: String
     let role: String
+}
+
+struct LinkRequest: Encodable {
+    let referenceCode: String
 }

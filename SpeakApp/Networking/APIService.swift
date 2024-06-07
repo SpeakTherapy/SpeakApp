@@ -74,15 +74,42 @@ class APIService {
             .eraseToAnyPublisher()
     }
     
-    func linkToTherapist(patientID: UUID, referenceCode: String) -> AnyPublisher<HTTPURLResponse, Error> {
-        let url = URL(string: "\(baseURL)/patients/\(patientID)/link")!
+    func linkToTherapist(userID: UUID, referenceCode: String) -> AnyPublisher<HTTPURLResponse, Error> {
+        let url = URL(string: "\(baseURL)/users/\(userID)/link")!
         var request = URLRequest(url: url)
         request.httpMethod = "PUT"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpBody = try? JSONEncoder().encode(["referenceCode": referenceCode])
+        let linkRequest = LinkRequest(referenceCode: referenceCode)
+        request.httpBody = try? JSONEncoder().encode(linkRequest)
         
         return URLSession.shared.dataTaskPublisher(for: request)
             .map { $0.response as! HTTPURLResponse }
+            .mapError { $0 as Error }
+            .eraseToAnyPublisher()
+    }
+    
+    func getTherapist(referenceCode: String) -> AnyPublisher<User, Error> {
+        let url = URL(string: "\(baseURL)/users/therapist/\(referenceCode)")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        return URLSession.shared.dataTaskPublisher(for: url)
+            .map { $0.data }
+            .decode(type: User.self, decoder: JSONDecoder())
+            .mapError { $0 as Error }
+            .eraseToAnyPublisher()
+    }
+    
+    func getUser(userID: UUID) -> AnyPublisher<User, Error> {
+        let url = URL(string: "\(baseURL)/users/\(userID)")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        return URLSession.shared.dataTaskPublisher(for: request)
+            .map { $0.data }
+            .decode(type: User.self, decoder: JSONDecoder())
             .mapError { $0 as Error }
             .eraseToAnyPublisher()
     }

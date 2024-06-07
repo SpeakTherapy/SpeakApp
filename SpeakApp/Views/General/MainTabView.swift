@@ -12,11 +12,20 @@ struct MainTabView: View {
     
     var body: some View {
         TabView {
-            ExerciseListView()
-                .tabItem {
-                    Image(systemName: "list.bullet")
-                    Text("Exercises")
-                }
+            if authViewModel.user?.role == .therapist {
+                PatientListView()
+                    .tabItem {
+                        Image(systemName: "person.3")
+                        Text("Patients")
+                    }
+                
+                ExerciseListView()
+                    .tabItem {
+                        Image(systemName: "list.bullet")
+                        Text("Exercises")
+                    }
+            }
+            
             
             ProfileView()
                 .tabItem {

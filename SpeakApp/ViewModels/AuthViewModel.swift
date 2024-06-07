@@ -31,7 +31,7 @@ class AuthViewModel: ObservableObject {
     }
     
     func login(email: String, password: String) {
-        let request = LoginRequest(email: email, password: password)
+        let request = LoginRequest(email: email, passwordHash: password)
         APIService.shared.login(request: request)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in

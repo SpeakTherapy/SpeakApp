@@ -53,13 +53,6 @@ struct CreateExerciseView: View {
             if success {
                 // Go back to previous screen
                 presentationMode.wrappedValue.dismiss()
-            } else {
-                // Show error message
-                if let errorMessage = exerciseViewModel.errorMessage {
-                    Text(errorMessage)
-                        .foregroundColor(.red)
-                        .padding()
-                }
             }
         }
     }

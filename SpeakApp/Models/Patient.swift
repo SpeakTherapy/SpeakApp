@@ -7,10 +7,13 @@
 
 import Foundation
 
-struct Patient: Codable {
+struct Patient: Codable, Identifiable {
     var id: UUID?
     var therapistID: UUID
+    var userID: UUID
     var referenceCode: String
     var exercises: [Exercise]
+    var user: User
+    var therapist: User?
 }
 

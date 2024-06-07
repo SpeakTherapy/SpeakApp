@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct User: Codable {
+struct User: Codable, Identifiable {
     var id: UUID?
     var name: String
     var email: String
@@ -21,3 +21,4 @@ enum UserRole: String, Codable {
     case patient
 }
 
+// therapist003265
