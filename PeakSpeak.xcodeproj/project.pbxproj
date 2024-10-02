@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B8266CA32C7D15B6002311E3 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8266CA22C7D15B6002311E3 /* AccountView.swift */; };
+		B8266CA52C7D1CF2002311E3 /* LinkToTherapistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8266CA42C7D1CF2002311E3 /* LinkToTherapistView.swift */; };
 		B87B80A42C4DB3B400F494B3 /* PeakSpeakApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B80A32C4DB3B400F494B3 /* PeakSpeakApp.swift */; };
 		B87B80A62C4DB3B400F494B3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B80A52C4DB3B400F494B3 /* ContentView.swift */; };
 		B87B80A82C4DB3B500F494B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B87B80A72C4DB3B500F494B3 /* Assets.xcassets */; };
@@ -14,6 +16,54 @@
 		B87B80B62C4DB3B500F494B3 /* PeakSpeakTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B80B52C4DB3B500F494B3 /* PeakSpeakTests.swift */; };
 		B87B80C02C4DB3B500F494B3 /* PeakSpeakUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B80BF2C4DB3B500F494B3 /* PeakSpeakUITests.swift */; };
 		B87B80C22C4DB3B500F494B3 /* PeakSpeakUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B80C12C4DB3B500F494B3 /* PeakSpeakUITestsLaunchTests.swift */; };
+		B87B80D02C4DB40E00F494B3 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B80CF2C4DB40E00F494B3 /* UserModel.swift */; };
+		B87B80D22C4DB42200F494B3 /* PatientExerciseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B80D12C4DB42200F494B3 /* PatientExerciseModel.swift */; };
+		B87B80D42C4DB43100F494B3 /* ExerciseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B80D32C4DB43100F494B3 /* ExerciseModel.swift */; };
+		B87B80D62C4DB44400F494B3 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B80D52C4DB44400F494B3 /* ResponseModel.swift */; };
+		B87B80DC2C4DB6E400F494B3 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B80DB2C4DB6E400F494B3 /* AuthManager.swift */; };
+		B87B80E42C4DB7AF00F494B3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B80E32C4DB7AF00F494B3 /* LoginView.swift */; };
+		B87B80E62C4DB7D400F494B3 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B80E52C4DB7D400F494B3 /* MainTabView.swift */; };
+		B87B80EA2C4DBDFB00F494B3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B80E92C4DBDFB00F494B3 /* NetworkManager.swift */; };
+		B87B80EC2C4DBEA100F494B3 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B80EB2C4DBEA100F494B3 /* SignupView.swift */; };
+		B87B80EE2C4E060100F494B3 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B80ED2C4E060100F494B3 /* SplashScreenView.swift */; };
+		B87B80F02C4E06DE00F494B3 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B80EF2C4E06DE00F494B3 /* LandingView.swift */; };
+		B87B80F22C4E075000F494B3 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B80F12C4E075000F494B3 /* ProfileView.swift */; };
+		B87B80F52C4E07FC00F494B3 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B80F42C4E07FC00F494B3 /* CustomTextField.swift */; };
+		B87B80F72C4E085000F494B3 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B80F62C4E085000F494B3 /* BackButton.swift */; };
+		B87B80FA2C4E08FA00F494B3 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B80F92C4E08FA00F494B3 /* ViewExtensions.swift */; };
+		B87B80FC2C4F581500F494B3 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B80FB2C4F581500F494B3 /* KeychainManager.swift */; };
+		B87B81002C5021AD00F494B3 /* JWTDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B80FF2C5021AD00F494B3 /* JWTDecoder.swift */; };
+		B87B81022C507F1900F494B3 /* ExerciseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B81012C507F1900F494B3 /* ExerciseManager.swift */; };
+		B87B81042C507FF300F494B3 /* ExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B81032C507FF300F494B3 /* ExerciseView.swift */; };
+		B87B81072C50817B00F494B3 /* ExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B81062C50817B00F494B3 /* ExerciseViewModel.swift */; };
+		B87B81092C51C5B100F494B3 /* CreateExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B81082C51C5B100F494B3 /* CreateExerciseView.swift */; };
+		B87B810B2C5204A200F494B3 /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B810A2C5204A200F494B3 /* FlowLayout.swift */; };
+		B87B810D2C520A0100F494B3 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B810C2C520A0100F494B3 /* TagView.swift */; };
+		B87B810F2C52CEBB00F494B3 /* ExerciseCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B810E2C52CEBB00F494B3 /* ExerciseCard.swift */; };
+		B87B81112C52ED4800F494B3 /* TherapistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B81102C52ED4800F494B3 /* TherapistView.swift */; };
+		B87B81132C52EDF800F494B3 /* TherapistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B81122C52EDF800F494B3 /* TherapistViewModel.swift */; };
+		B87B81152C52F30900F494B3 /* TherapistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B81142C52F30900F494B3 /* TherapistManager.swift */; };
+		B87B81172C52F81700F494B3 /* PatientCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B81162C52F81700F494B3 /* PatientCard.swift */; };
+		B87B81192C558E1500F494B3 /* ExerciseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B81182C558E1500F494B3 /* ExerciseDetailView.swift */; };
+		B87B811B2C55905000F494B3 /* PatientDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B811A2C55905000F494B3 /* PatientDetailView.swift */; };
+		B87B811D2C55A5E900F494B3 /* AddExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B811C2C55A5E900F494B3 /* AddExerciseView.swift */; };
+		B87B811F2C56B9C100F494B3 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B811E2C56B9C100F494B3 /* Checkbox.swift */; };
+		B87B81212C56BA4000F494B3 /* AddExerciseCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B81202C56BA4000F494B3 /* AddExerciseCard.swift */; };
+		B87B81232C58541C00F494B3 /* PatientExerciseCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B81222C58541C00F494B3 /* PatientExerciseCard.swift */; };
+		B87B81252C58AF7400F494B3 /* PatientExerciseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B81242C58AF7400F494B3 /* PatientExerciseDetailView.swift */; };
+		B87B81272C58B3A000F494B3 /* PatientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B81262C58B3A000F494B3 /* PatientView.swift */; };
+		B87B81292C58BB9D00F494B3 /* FrameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B81282C58BB9D00F494B3 /* FrameManager.swift */; };
+		B87B812B2C58BBBD00F494B3 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B812A2C58BBBD00F494B3 /* CameraManager.swift */; };
+		B87B812D2C58BBFB00F494B3 /* CGImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B812C2C58BBFB00F494B3 /* CGImageExtension.swift */; };
+		B87B812F2C58BC2100F494B3 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B812E2C58BC2100F494B3 /* CameraView.swift */; };
+		B87B81312C58BC4600F494B3 /* ExerciseRecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B81302C58BC4500F494B3 /* ExerciseRecordingView.swift */; };
+		B87B81342C59EE4600F494B3 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B81332C59EE4600F494B3 /* ImagePicker.swift */; };
+		B87B81362C59FC2000F494B3 /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B81352C59FC2000F494B3 /* DataExtension.swift */; };
+		B87B81382C5A9D1C00F494B3 /* CustomTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B81372C5A9D1C00F494B3 /* CustomTopBar.swift */; };
+		B87B813D2C5AA73F00F494B3 /* SignupStep2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B813C2C5AA73F00F494B3 /* SignupStep2View.swift */; };
+		B87B813F2C5AA7F700F494B3 /* SignupStep3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B813E2C5AA7F700F494B3 /* SignupStep3View.swift */; };
+		B87B81412C62CB3B00F494B3 /* EncryptionHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B81402C62CB3B00F494B3 /* EncryptionHelpers.swift */; };
+		B87B81432C65685700F494B3 /* AWSS3Uploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B81422C65685700F494B3 /* AWSS3Uploader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +84,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B8266CA22C7D15B6002311E3 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		B8266CA42C7D1CF2002311E3 /* LinkToTherapistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkToTherapistView.swift; sourceTree = "<group>"; };
 		B87B80A02C4DB3B400F494B3 /* PeakSpeak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeakSpeak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B87B80A32C4DB3B400F494B3 /* PeakSpeakApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeakSpeakApp.swift; sourceTree = "<group>"; };
 		B87B80A52C4DB3B400F494B3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +97,55 @@
 		B87B80BB2C4DB3B500F494B3 /* PeakSpeakUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeakSpeakUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B87B80BF2C4DB3B500F494B3 /* PeakSpeakUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeakSpeakUITests.swift; sourceTree = "<group>"; };
 		B87B80C12C4DB3B500F494B3 /* PeakSpeakUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeakSpeakUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B87B80CF2C4DB40E00F494B3 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		B87B80D12C4DB42200F494B3 /* PatientExerciseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientExerciseModel.swift; sourceTree = "<group>"; };
+		B87B80D32C4DB43100F494B3 /* ExerciseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseModel.swift; sourceTree = "<group>"; };
+		B87B80D52C4DB44400F494B3 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
+		B87B80DB2C4DB6E400F494B3 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		B87B80E32C4DB7AF00F494B3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		B87B80E52C4DB7D400F494B3 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		B87B80E92C4DBDFB00F494B3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		B87B80EB2C4DBEA100F494B3 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		B87B80ED2C4E060100F494B3 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		B87B80EF2C4E06DE00F494B3 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
+		B87B80F12C4E075000F494B3 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		B87B80F42C4E07FC00F494B3 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		B87B80F62C4E085000F494B3 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		B87B80F92C4E08FA00F494B3 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
+		B87B80FB2C4F581500F494B3 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		B87B80FF2C5021AD00F494B3 /* JWTDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWTDecoder.swift; sourceTree = "<group>"; };
+		B87B81012C507F1900F494B3 /* ExerciseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseManager.swift; sourceTree = "<group>"; };
+		B87B81032C507FF300F494B3 /* ExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
+		B87B81062C50817B00F494B3 /* ExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewModel.swift; sourceTree = "<group>"; };
+		B87B81082C51C5B100F494B3 /* CreateExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateExerciseView.swift; sourceTree = "<group>"; };
+		B87B810A2C5204A200F494B3 /* FlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowLayout.swift; sourceTree = "<group>"; };
+		B87B810C2C520A0100F494B3 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
+		B87B810E2C52CEBB00F494B3 /* ExerciseCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCard.swift; sourceTree = "<group>"; };
+		B87B81102C52ED4800F494B3 /* TherapistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TherapistView.swift; sourceTree = "<group>"; };
+		B87B81122C52EDF800F494B3 /* TherapistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TherapistViewModel.swift; sourceTree = "<group>"; };
+		B87B81142C52F30900F494B3 /* TherapistManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TherapistManager.swift; sourceTree = "<group>"; };
+		B87B81162C52F81700F494B3 /* PatientCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientCard.swift; sourceTree = "<group>"; };
+		B87B81182C558E1500F494B3 /* ExerciseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailView.swift; sourceTree = "<group>"; };
+		B87B811A2C55905000F494B3 /* PatientDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientDetailView.swift; sourceTree = "<group>"; };
+		B87B811C2C55A5E900F494B3 /* AddExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseView.swift; sourceTree = "<group>"; };
+		B87B811E2C56B9C100F494B3 /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
+		B87B81202C56BA4000F494B3 /* AddExerciseCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseCard.swift; sourceTree = "<group>"; };
+		B87B81222C58541C00F494B3 /* PatientExerciseCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientExerciseCard.swift; sourceTree = "<group>"; };
+		B87B81242C58AF7400F494B3 /* PatientExerciseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientExerciseDetailView.swift; sourceTree = "<group>"; };
+		B87B81262C58B3A000F494B3 /* PatientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientView.swift; sourceTree = "<group>"; };
+		B87B81282C58BB9D00F494B3 /* FrameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameManager.swift; sourceTree = "<group>"; };
+		B87B812A2C58BBBD00F494B3 /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
+		B87B812C2C58BBFB00F494B3 /* CGImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGImageExtension.swift; sourceTree = "<group>"; };
+		B87B812E2C58BC2100F494B3 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		B87B81302C58BC4500F494B3 /* ExerciseRecordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseRecordingView.swift; sourceTree = "<group>"; };
+		B87B81322C58C04C00F494B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B87B81332C59EE4600F494B3 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		B87B81352C59FC2000F494B3 /* DataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtension.swift; sourceTree = "<group>"; };
+		B87B81372C5A9D1C00F494B3 /* CustomTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTopBar.swift; sourceTree = "<group>"; };
+		B87B813C2C5AA73F00F494B3 /* SignupStep2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupStep2View.swift; sourceTree = "<group>"; };
+		B87B813E2C5AA7F700F494B3 /* SignupStep3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupStep3View.swift; sourceTree = "<group>"; };
+		B87B81402C62CB3B00F494B3 /* EncryptionHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionHelpers.swift; sourceTree = "<group>"; };
+		B87B81422C65685700F494B3 /* AWSS3Uploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSS3Uploader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +173,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B8266C9F2C7D135D002311E3 /* Exercises */ = {
+			isa = PBXGroup;
+			children = (
+				B87B81032C507FF300F494B3 /* ExerciseView.swift */,
+				B87B81182C558E1500F494B3 /* ExerciseDetailView.swift */,
+				B87B811C2C55A5E900F494B3 /* AddExerciseView.swift */,
+				B87B81082C51C5B100F494B3 /* CreateExerciseView.swift */,
+				B87B81242C58AF7400F494B3 /* PatientExerciseDetailView.swift */,
+				B87B81302C58BC4500F494B3 /* ExerciseRecordingView.swift */,
+			);
+			path = Exercises;
+			sourceTree = "<group>";
+		};
+		B8266CA12C7D1515002311E3 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				B87B80F12C4E075000F494B3 /* ProfileView.swift */,
+				B8266CA22C7D15B6002311E3 /* AccountView.swift */,
+				B8266CA42C7D1CF2002311E3 /* LinkToTherapistView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		B87B80972C4DB3B400F494B3 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +219,14 @@
 		B87B80A22C4DB3B400F494B3 /* PeakSpeak */ = {
 			isa = PBXGroup;
 			children = (
+				B87B81322C58C04C00F494B3 /* Info.plist */,
+				B87B80F82C4E08EE00F494B3 /* Extensions */,
+				B87B80F32C4E07E800F494B3 /* Components */,
+				B87B80DA2C4DB6DA00F494B3 /* Managers */,
+				B87B81052C50816000F494B3 /* ViewModels */,
+				B87B80E22C4DB7A200F494B3 /* Views */,
+				B87B80DD2C4DB72300F494B3 /* Utils */,
+				B87B80CE2C4DB40200F494B3 /* Models */,
 				B87B80A32C4DB3B400F494B3 /* PeakSpeakApp.swift */,
 				B87B80A52C4DB3B400F494B3 /* ContentView.swift */,
 				B87B80A72C4DB3B500F494B3 /* Assets.xcassets */,
@@ -127,6 +259,106 @@
 				B87B80C12C4DB3B500F494B3 /* PeakSpeakUITestsLaunchTests.swift */,
 			);
 			path = PeakSpeakUITests;
+			sourceTree = "<group>";
+		};
+		B87B80CE2C4DB40200F494B3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B87B80CF2C4DB40E00F494B3 /* UserModel.swift */,
+				B87B80D12C4DB42200F494B3 /* PatientExerciseModel.swift */,
+				B87B80D32C4DB43100F494B3 /* ExerciseModel.swift */,
+				B87B80D52C4DB44400F494B3 /* ResponseModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B87B80DA2C4DB6DA00F494B3 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				B87B80DB2C4DB6E400F494B3 /* AuthManager.swift */,
+				B87B80E92C4DBDFB00F494B3 /* NetworkManager.swift */,
+				B87B80FB2C4F581500F494B3 /* KeychainManager.swift */,
+				B87B81012C507F1900F494B3 /* ExerciseManager.swift */,
+				B87B81142C52F30900F494B3 /* TherapistManager.swift */,
+				B87B81282C58BB9D00F494B3 /* FrameManager.swift */,
+				B87B812A2C58BBBD00F494B3 /* CameraManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		B87B80DD2C4DB72300F494B3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B87B80FF2C5021AD00F494B3 /* JWTDecoder.swift */,
+				B87B81402C62CB3B00F494B3 /* EncryptionHelpers.swift */,
+				B87B81422C65685700F494B3 /* AWSS3Uploader.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		B87B80E22C4DB7A200F494B3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B8266CA12C7D1515002311E3 /* Profile */,
+				B8266C9F2C7D135D002311E3 /* Exercises */,
+				B87B81392C5AA5EA00F494B3 /* Auth */,
+				B87B80E52C4DB7D400F494B3 /* MainTabView.swift */,
+				B87B80ED2C4E060100F494B3 /* SplashScreenView.swift */,
+				B87B80EF2C4E06DE00F494B3 /* LandingView.swift */,
+				B87B81102C52ED4800F494B3 /* TherapistView.swift */,
+				B87B811A2C55905000F494B3 /* PatientDetailView.swift */,
+				B87B81262C58B3A000F494B3 /* PatientView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B87B80F32C4E07E800F494B3 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B87B80F42C4E07FC00F494B3 /* CustomTextField.swift */,
+				B87B80F62C4E085000F494B3 /* BackButton.swift */,
+				B87B810A2C5204A200F494B3 /* FlowLayout.swift */,
+				B87B810C2C520A0100F494B3 /* TagView.swift */,
+				B87B810E2C52CEBB00F494B3 /* ExerciseCard.swift */,
+				B87B81162C52F81700F494B3 /* PatientCard.swift */,
+				B87B811E2C56B9C100F494B3 /* Checkbox.swift */,
+				B87B81202C56BA4000F494B3 /* AddExerciseCard.swift */,
+				B87B81222C58541C00F494B3 /* PatientExerciseCard.swift */,
+				B87B812E2C58BC2100F494B3 /* CameraView.swift */,
+				B87B81332C59EE4600F494B3 /* ImagePicker.swift */,
+				B87B81372C5A9D1C00F494B3 /* CustomTopBar.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B87B80F82C4E08EE00F494B3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B87B80F92C4E08FA00F494B3 /* ViewExtensions.swift */,
+				B87B812C2C58BBFB00F494B3 /* CGImageExtension.swift */,
+				B87B81352C59FC2000F494B3 /* DataExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B87B81052C50816000F494B3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B87B81062C50817B00F494B3 /* ExerciseViewModel.swift */,
+				B87B81122C52EDF800F494B3 /* TherapistViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B87B81392C5AA5EA00F494B3 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				B87B80E32C4DB7AF00F494B3 /* LoginView.swift */,
+				B87B80EB2C4DBEA100F494B3 /* SignupView.swift */,
+				B87B813C2C5AA73F00F494B3 /* SignupStep2View.swift */,
+				B87B813E2C5AA7F700F494B3 /* SignupStep3View.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +491,58 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B87B80EC2C4DBEA100F494B3 /* SignupView.swift in Sources */,
+				B87B80E62C4DB7D400F494B3 /* MainTabView.swift in Sources */,
+				B87B810B2C5204A200F494B3 /* FlowLayout.swift in Sources */,
+				B8266CA32C7D15B6002311E3 /* AccountView.swift in Sources */,
 				B87B80A62C4DB3B400F494B3 /* ContentView.swift in Sources */,
+				B87B81232C58541C00F494B3 /* PatientExerciseCard.swift in Sources */,
+				B87B811F2C56B9C100F494B3 /* Checkbox.swift in Sources */,
+				B87B80D02C4DB40E00F494B3 /* UserModel.swift in Sources */,
+				B87B80EA2C4DBDFB00F494B3 /* NetworkManager.swift in Sources */,
+				B87B813D2C5AA73F00F494B3 /* SignupStep2View.swift in Sources */,
+				B87B811D2C55A5E900F494B3 /* AddExerciseView.swift in Sources */,
 				B87B80A42C4DB3B400F494B3 /* PeakSpeakApp.swift in Sources */,
+				B87B80F02C4E06DE00F494B3 /* LandingView.swift in Sources */,
+				B87B811B2C55905000F494B3 /* PatientDetailView.swift in Sources */,
+				B87B81412C62CB3B00F494B3 /* EncryptionHelpers.swift in Sources */,
+				B87B81342C59EE4600F494B3 /* ImagePicker.swift in Sources */,
+				B87B80F52C4E07FC00F494B3 /* CustomTextField.swift in Sources */,
+				B87B812B2C58BBBD00F494B3 /* CameraManager.swift in Sources */,
+				B87B80F22C4E075000F494B3 /* ProfileView.swift in Sources */,
+				B87B80EE2C4E060100F494B3 /* SplashScreenView.swift in Sources */,
+				B87B80FA2C4E08FA00F494B3 /* ViewExtensions.swift in Sources */,
+				B87B80D22C4DB42200F494B3 /* PatientExerciseModel.swift in Sources */,
+				B87B81272C58B3A000F494B3 /* PatientView.swift in Sources */,
+				B87B81362C59FC2000F494B3 /* DataExtension.swift in Sources */,
+				B87B80D62C4DB44400F494B3 /* ResponseModel.swift in Sources */,
+				B87B81002C5021AD00F494B3 /* JWTDecoder.swift in Sources */,
+				B87B81112C52ED4800F494B3 /* TherapistView.swift in Sources */,
+				B87B81022C507F1900F494B3 /* ExerciseManager.swift in Sources */,
+				B87B80F72C4E085000F494B3 /* BackButton.swift in Sources */,
+				B87B81172C52F81700F494B3 /* PatientCard.swift in Sources */,
+				B87B81312C58BC4600F494B3 /* ExerciseRecordingView.swift in Sources */,
+				B87B810F2C52CEBB00F494B3 /* ExerciseCard.swift in Sources */,
+				B87B81072C50817B00F494B3 /* ExerciseViewModel.swift in Sources */,
+				B87B812F2C58BC2100F494B3 /* CameraView.swift in Sources */,
+				B87B810D2C520A0100F494B3 /* TagView.swift in Sources */,
+				B87B81152C52F30900F494B3 /* TherapistManager.swift in Sources */,
+				B8266CA52C7D1CF2002311E3 /* LinkToTherapistView.swift in Sources */,
+				B87B81212C56BA4000F494B3 /* AddExerciseCard.swift in Sources */,
+				B87B81092C51C5B100F494B3 /* CreateExerciseView.swift in Sources */,
+				B87B81432C65685700F494B3 /* AWSS3Uploader.swift in Sources */,
+				B87B81192C558E1500F494B3 /* ExerciseDetailView.swift in Sources */,
+				B87B80E42C4DB7AF00F494B3 /* LoginView.swift in Sources */,
+				B87B81042C507FF300F494B3 /* ExerciseView.swift in Sources */,
+				B87B80D42C4DB43100F494B3 /* ExerciseModel.swift in Sources */,
+				B87B81382C5A9D1C00F494B3 /* CustomTopBar.swift in Sources */,
+				B87B81292C58BB9D00F494B3 /* FrameManager.swift in Sources */,
+				B87B813F2C5AA7F700F494B3 /* SignupStep3View.swift in Sources */,
+				B87B812D2C58BBFB00F494B3 /* CGImageExtension.swift in Sources */,
+				B87B81132C52EDF800F494B3 /* TherapistViewModel.swift in Sources */,
+				B87B80DC2C4DB6E400F494B3 /* AuthManager.swift in Sources */,
+				B87B80FC2C4F581500F494B3 /* KeychainManager.swift in Sources */,
+				B87B81252C58AF7400F494B3 /* PatientExerciseDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +631,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -404,9 +687,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SWIFT_COMPILATION_MODE = wholemodule;
 			};
 			name = Release;
@@ -424,28 +709,40 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PeakSpeak/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PeakSpeak;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses the camera to capture videos.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app uses the microphone to record videos with audio.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = tanishb.PeakSpeak;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tanishb.PeakSpeak;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -462,28 +759,41 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PeakSpeak/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PeakSpeak;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses the camera to capture videos.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app uses the microphone to record videos with audio.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = tanishb.PeakSpeak;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tanishb.PeakSpeak;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -496,7 +806,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XA5YLYDDJ3;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = tanishb.PeakSpeakTests;
@@ -519,7 +829,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XA5YLYDDJ3;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = tanishb.PeakSpeakTests;
