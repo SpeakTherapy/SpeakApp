@@ -14,6 +14,7 @@ struct CreateExerciseView: View {
     @State private var selectedTags: [ExerciseTags] = []
     @State private var isNameActive: Bool = false
     @State private var isDescriptionActive: Bool = false
+    @State private var selectedVisibility: ExerciseFilter = .global
     
     @Environment(\.presentationMode) var presentationMode
 
@@ -48,7 +49,22 @@ struct CreateExerciseView: View {
                 }
                 .frame(maxHeight: .leastNormalMagnitude)
                 .padding(.bottom, 20)
+            
+            VStack(alignment: .leading, spacing: 10) {
+                Text("Visibility")
+                    .font(.headline)
+                
+                Picker("Visibility", selection: $selectedVisibility) {
+                    ForEach(ExerciseFilter.allCases) { visibility in
+                        Text(visibility.rawValue).tag(visibility)
+                    }
+                }
+                .pickerStyle(.segmented)
+            }
+            .padding(.horizontal)
+            .padding(.top, 20)
 
+            
             Text("Tags")
                 .font(.headline)
                 .padding(.top)
@@ -66,7 +82,8 @@ struct CreateExerciseView: View {
 
             Button(action: {
                 let selectedTagStrings = selectedTags.map { $0.rawValue }
-                viewModel.createExercise(name: name, description: description, tags: selectedTagStrings, videoURL: "")
+                let isGlobal = selectedVisibility == .global
+                viewModel.createExercise(name: name, description: description, tags: selectedTagStrings, videoURL: "", isGlobal: isGlobal)
                 presentationMode.wrappedValue.dismiss()
             }) {
                 Text("Create")

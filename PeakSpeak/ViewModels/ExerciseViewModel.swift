@@ -12,6 +12,9 @@ import AVFoundation
 
 class ExerciseViewModel: ObservableObject {
     @Published var exercises: [Exercise] = []
+    @Published var allExercises: [Exercise] = []
+    @Published var globalExercises: [Exercise] = []
+    @Published var therapistExercises: [Exercise] = []
     @Published var selectedExercises: Set<String> = []
     @Published var patientExercises: [PatientExerciseResponse] = []
     @Published var fetchError: String?
@@ -27,19 +30,48 @@ class ExerciseViewModel: ObservableObject {
     
     init() {
         if AuthManager.shared.user?.role == .therapist {
-            fetchExercises()
+            fetchGlobalExercises()
         } else if AuthManager.shared.user?.role == .patient{
             fetchPatientExercises(patientID: AuthManager.shared.user!.userId)
         }
     }
+    
+    func fetchAllExercises(therapistID: String) {
+        // 1. Fetch global
+        // 2. Fetch therapist
+        // 3. Combine them
+        Publishers.Zip(
+            ExerciseManager.shared.getGlobalExercises(),
+            ExerciseManager.shared.getTherapistExercises(therapistID: therapistID)
+        )
+        .receive(on: DispatchQueue.main)
+        .sink { [weak self] globalResult, therapistResult in
+            switch globalResult {
+            case .success(let globalResponse):
+                switch therapistResult {
+                case .success(let therapistResponse):
+                    // Combine them
+                    let combined = globalResponse.exercises + therapistResponse.exercises
+                    self?.allExercises = combined
+                case .failure(let error):
+                    self?.fetchError = error.error
+                }
+            case .failure(let error):
+                self?.fetchError = error.error
+            }
+        }
+        .store(in: &cancellables)
+    }
 
-    func fetchExercises() {
-        ExerciseManager.shared.getExercises()
+    func fetchGlobalExercises() {
+        ExerciseManager.shared.getGlobalExercises()
             .receive(on: DispatchQueue.main)
             .sink { [weak self] result in
                 switch result {
                 case .success(let exerciseResponse):
+                    self?.globalExercises = exerciseResponse.exercises
                     self?.exercises = exerciseResponse.exercises
+                    self?.fetchError = nil
                 case .failure(let error):
                     self?.fetchError = error.error
                 }
@@ -47,8 +79,28 @@ class ExerciseViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
-    func createExercise(name: String, description: String, tags: [String], videoURL: String?) {
-        ExerciseManager.shared.createExercise(name: name, description: description, videoURL: videoURL ?? "", tags: tags)
+    func fetchTherapistExercises(therapistID: String) {
+        ExerciseManager.shared.getTherapistExercises(therapistID: therapistID)
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] result in
+                switch result {
+                case .success(let exerciseResponse):
+                    self?.therapistExercises = exerciseResponse.exercises
+                    self?.exercises = exerciseResponse.exercises
+                    self?.fetchError = nil
+                case .failure(let error):
+                    self?.fetchError = error.error
+                }
+            }
+            .store(in: &cancellables)
+    }
+    
+    func createExercise(name: String, description: String, tags: [String], videoURL: String?, isGlobal: Bool) {
+        guard let therapistID = AuthManager.shared.user?.id else {
+            self.createError = "No user found"
+            return
+        }
+        ExerciseManager.shared.createExercise(name: name, description: description, videoURL: videoURL ?? "", tags: tags, isGlobal: isGlobal, therapistID: therapistID)
             .receive(on: DispatchQueue.main)
             .sink{ [weak self] result in
                 switch result {

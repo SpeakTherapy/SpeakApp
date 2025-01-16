@@ -16,6 +16,8 @@ struct Exercise: Codable, Identifiable {
     let createdAt: Date
     let updatedAt: Date
     let exerciseId: String
+    let isGlobal: Bool
+    let therapistID: String
 
     enum CodingKeys: String, CodingKey {
         case id = "_id"
@@ -26,6 +28,8 @@ struct Exercise: Codable, Identifiable {
         case createdAt = "created_at"
         case updatedAt = "updated_at"
         case exerciseId = "exercise_id"
+        case isGlobal = "is_global"
+        case therapistID = "therapist_id"
     }
 }
 
@@ -34,7 +38,12 @@ struct ExerciseResponse: Codable {
     let total: Int
 }
 
-
+enum ExerciseFilter: String, CaseIterable, Identifiable {
+    case global = "Global"
+    case therapist = "Private" // 'private' is a reserved keyword in Swift
+    
+    var id: String { self.rawValue }
+}
 
 enum ExerciseTags: String, Codable, CaseIterable, Identifiable {
     case articulation

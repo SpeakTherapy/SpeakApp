@@ -12,6 +12,9 @@ struct ProfileView: View {
     @State private var referenceCode: String = ""
     @State private var isImagePickerPresented = false
     @State private var selectedImage: UIImage?
+    @State private var isReferenceCodeVisible = false
+    @State private var showCopyAlert = false
+
     
     var body: some View {
         VStack {
@@ -48,10 +51,41 @@ struct ProfileView: View {
                     .fontWeight(.bold)
                     .padding(.top)
                 
+                // Inside your VStack or appropriate container
                 if user.role == .therapist {
-                    Text("Reference Code: \(user.referenceCode)")
-                        .font(.title3)
+                    HStack {
+                        Text("Reference Code:")
+                            .font(.title3)
+                            .fontWeight(.semibold)
+                        
+                        if isReferenceCodeVisible {
+                            Text(user.referenceCode)
+                                .font(.title3)
+                                .foregroundColor(.primary)
+                                .onTapGesture {
+                                    // Copy to clipboard
+                                    UIPasteboard.general.string = user.referenceCode
+                                    showCopyAlert = true
+                                }
+                        } else {
+                            Text("••••••••••")
+                                .font(.title3)
+                                .foregroundColor(.secondary)
+                        }
+                        
+                        Button(action: {
+                            isReferenceCodeVisible.toggle()
+                        }) {
+                            Image(systemName: isReferenceCodeVisible ? "eye.slash.fill" : "eye.fill")
+                                .foregroundColor(.blue)
+                        }
+                    }
+                    .padding(.vertical)
+                    .alert(isPresented: $showCopyAlert) {
+                        Alert(title: Text("Copied"), message: Text("Reference code copied to clipboard."), dismissButton: .default(Text("OK")))
+                    }
                 }
+
                 
                 // List of Options
                 VStack{

@@ -37,8 +37,8 @@ class ExerciseManager {
     }
     
     
-    func getExercises() -> AnyPublisher<Result<ExerciseResponse, ErrorResponse>, Never> {
-        guard let url = URL(string: "\(baseURL)/exercises") else {
+    func getGlobalExercises() -> AnyPublisher<Result<ExerciseResponse, ErrorResponse>, Never> {
+        guard let url = URL(string: "\(baseURL)/exercises/exercises") else {
             return Just(.failure(ErrorResponse(error: "Invalid URL")))
                 .eraseToAnyPublisher()
         }
@@ -77,14 +77,42 @@ class ExerciseManager {
             .eraseToAnyPublisher()
     }
     
+    func getTherapistExercises(therapistID: String) -> AnyPublisher<Result<ExerciseResponse, ErrorResponse>, Never> {
+        // Build the URL with query parameter for therapist_id
+        guard let url = URL(string: "\(baseURL)/exercises/therapist?therapist_id=\(therapistID)") else {
+            return Just(.failure(ErrorResponse(error: "Invalid URL")))
+                .eraseToAnyPublisher()
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        return URLSession.shared.dataTaskPublisher(for: request)
+            .tryMap { output in
+                guard let response = output.response as? HTTPURLResponse, response.statusCode == 200 else {
+                    let errorResponse = try? self.jsonDecoder.decode(ErrorResponse.self, from: output.data)
+                    throw errorResponse ?? ErrorResponse(error: "Unknown error")
+                }
+                let exerciseResponse = try self.jsonDecoder.decode(ExerciseResponse.self, from: output.data)
+                return .success(exerciseResponse)
+            }
+            .catch { error -> Just<Result<ExerciseResponse, ErrorResponse>> in
+                let errorResponse = error as? ErrorResponse ?? ErrorResponse(error: error.localizedDescription)
+                return Just(.failure(errorResponse))
+            }
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
+    }
     
-    func createExercise(name: String, description: String, videoURL: String, tags: [String]) -> AnyPublisher<Result<SimpleResponse, ErrorResponse>, Never> {
+    
+    func createExercise(name: String, description: String, videoURL: String, tags: [String], isGlobal: Bool, therapistID: String) -> AnyPublisher<Result<SimpleResponse, ErrorResponse>, Never> {
         let url = URL(string: "\(baseURL)/exercise")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        let body: [String: Any] = ["name": name, "description": description, "tags": tags, "videoURL": videoURL]
+        let body: [String: Any] = ["name": name, "description": description, "tags": tags, "video_url": videoURL, "is_global": isGlobal, "therapist_id": therapistID]
         request.httpBody = try? JSONSerialization.data(withJSONObject: body)
         
         return URLSession.shared.dataTaskPublisher(for: request)
