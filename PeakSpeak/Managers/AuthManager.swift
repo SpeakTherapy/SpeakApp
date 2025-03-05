@@ -40,7 +40,7 @@ class AuthManager: ObservableObject {
             .sink { [weak self] result in
                 switch result {
                 case .success(let response):
-                    print("User signed up with ID: \(response.insertedID)")
+//                    print("User signed up with ID: \(response.insertedID)")
                     self?.signupError = nil
                     self?.login(email: email, password: password)
                 case .failure(let error):
@@ -57,7 +57,7 @@ class AuthManager: ObservableObject {
             .sink { [weak self] result in
                 switch result {
                 case .success(let response):
-                    self?.user = User(id: response.id, firstName: response.firstName, lastName: response.lastName, email: response.email, password: response.password, role: UserRole(rawValue: response.role)!, referenceCode: response.referenceCode ?? "", profileImage: response.profileImage ?? "", token: response.token, refreshToken: response.refreshToken, createdAt: response.createdAt, updatedAt: response.updatedAt, userId: response.userId)
+                    self?.user = User(id: response.id, firstName: response.firstName, lastName: response.lastName, email: response.email, password: response.password, role: UserRole(rawValue: response.role)!, referenceCode: response.referenceCode ?? "", profileImage: response.profileImage ?? "", createdAt: response.createdAt, updatedAt: response.updatedAt, userId: response.userId)
                     self?.loginError = nil
                     self?.isAuthenticated = true
                     

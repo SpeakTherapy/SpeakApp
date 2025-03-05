@@ -43,6 +43,7 @@ struct ExerciseView: View {
             .refreshable {
                 // Pull-to-refresh logic
                 if authManager.user?.role == .therapist {
+                    viewModel.exercises = []
                     refreshBasedOnCategory(selectedCategory)
                 } else if authManager.user?.role == .patient {
                     // Patient logic remains the same
@@ -90,6 +91,8 @@ struct ExerciseView: View {
     
     // MARK: - Helper function for handling filter changes
     private func fetchData(for category: ExerciseFilter) {
+        viewModel.exercises = []
+        
         switch category {
         case .global:
             // If you want to use the cached data if it exists,

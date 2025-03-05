@@ -53,18 +53,17 @@ class NetworkManager {
         return body
     }
     
-    func signup(firstName: String, lastName: String, email: String, password: String, role: String) -> AnyPublisher<Result<SimpleResponse, ErrorResponse>, Never> {
+    func signup(firstName: String, lastName: String, email: String, password: String, role: String) -> AnyPublisher<Result<UserResponse, ErrorResponse>, Never> {
         let url = URL(string: "\(baseURL)/signup")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
+        request.allHTTPHeaderFields = createHeaders()
+
         let body: [String: Any] = ["first_name": firstName, "last_name": lastName, "email": email, "password": password, "role": role]
         request.httpBody = try? JSONSerialization.data(withJSONObject: body)
-        
+
         return URLSession.shared.dataTaskPublisher(for: request)
-            .tryMap { output -> Data in
-                print("Response: \(output.response)")
+            .tryMap { output in
                 guard let response = output.response as? HTTPURLResponse, response.statusCode == 200 else {
                     let errorResponse = try self.jsonDecoder.decode(ErrorResponse.self, from: output.data)
                     throw errorResponse
@@ -73,14 +72,15 @@ class NetworkManager {
             }
             .map { data in
                 do {
-                    let signupResponse = try self.jsonDecoder.decode(SimpleResponse.self, from: data)
-                    return .success(signupResponse)
+                    let signupResponse = try self.jsonDecoder.decode(LoginResponse.self, from: data)
+                    saveToken(signupResponse.token) // Store token
+                    return .success(signupResponse.user)
                 } catch {
                     let errorResponse = try? self.jsonDecoder.decode(ErrorResponse.self, from: data)
                     return .failure(errorResponse ?? ErrorResponse(error: "Unknown error"))
                 }
             }
-            .catch { error -> Just<Result<SimpleResponse, ErrorResponse>> in
+            .catch { error -> Just<Result<UserResponse, ErrorResponse>> in
                 let errorResponse = error as? ErrorResponse ?? ErrorResponse(error: error.localizedDescription)
                 return Just(.failure(errorResponse))
             }
@@ -89,10 +89,10 @@ class NetworkManager {
     }
     
     func getUser(userID: String) -> AnyPublisher<Result<LoginResponse, ErrorResponse>, Never> {
-        let url = URL(string: "\(baseURL)/user/\(userID)")!
+        let url = URL(string: "\(baseURL)/api/user/\(userID)")!
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.allHTTPHeaderFields = createHeaders()
         
         return URLSession.shared.dataTaskPublisher(for: request)
             .tryMap { output in
@@ -134,48 +134,34 @@ class NetworkManager {
             .eraseToAnyPublisher()
     }
     
-    func login(email: String, password: String) -> AnyPublisher<Result<LoginResponse, ErrorResponse>, Never> {
+    func login(email: String, password: String) -> AnyPublisher<Result<UserResponse, ErrorResponse>, Never> {
         let url = URL(string: "\(baseURL)/login")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
+        request.allHTTPHeaderFields = createHeaders()
+
         let body: [String: Any] = ["email": email, "password": password]
         request.httpBody = try? JSONSerialization.data(withJSONObject: body)
-        
+
         return URLSession.shared.dataTaskPublisher(for: request)
             .tryMap { output in
-                print("Response: \(output.response)")
-                if let jsonString = String(data: output.data, encoding: .utf8) {
-                    print("Raw JSON: \(jsonString)")
-                }
-                guard let response = output.response as? HTTPURLResponse else {
-                    throw URLError(.badServerResponse)
-                }
-                
-                if response.statusCode == 200 {
-                    return output.data
-                } else {
+                guard let response = output.response as? HTTPURLResponse, response.statusCode == 200 else {
                     let errorResponse = try self.jsonDecoder.decode(ErrorResponse.self, from: output.data)
                     throw errorResponse
                 }
+                return output.data
             }
             .map { data in
                 do {
                     let loginResponse = try self.jsonDecoder.decode(LoginResponse.self, from: data)
-                    return .success(loginResponse)
+                    saveToken(loginResponse.token) // Store token
+                    return .success(loginResponse.user)
                 } catch {
-                    print("Decoding LoginResponse error: \(error)")
-                    do {
-                        let errorResponse = try self.jsonDecoder.decode(ErrorResponse.self, from: data)
-                        return .failure(errorResponse)
-                    } catch {
-                        print("Decoding ErrorResponse error: \(error)")
-                        return .failure(ErrorResponse(error: "Unknown error"))
-                    }
+                    let errorResponse = try? self.jsonDecoder.decode(ErrorResponse.self, from: data)
+                    return .failure(errorResponse ?? ErrorResponse(error: "Unknown error"))
                 }
             }
-            .catch { error -> Just<Result<LoginResponse, ErrorResponse>> in
+            .catch { error -> Just<Result<UserResponse, ErrorResponse>> in
                 let errorResponse = error as? ErrorResponse ?? ErrorResponse(error: error.localizedDescription)
                 return Just(.failure(errorResponse))
             }
@@ -184,10 +170,10 @@ class NetworkManager {
     }
     
     func delete(userID: String) -> AnyPublisher<Result<APIResponse, ErrorResponse>, Never> {
-        let url = URL(string: "\(baseURL)/user/\(userID)")!
+        let url = URL(string: "\(baseURL)/api/user/\(userID)")!
         var request = URLRequest(url: url)
         request.httpMethod = "DELETE"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.allHTTPHeaderFields = createHeaders()
         
         return URLSession.shared.dataTaskPublisher(for: request)
             .tryMap { output -> Data in
@@ -216,11 +202,14 @@ class NetworkManager {
     }
     
     func uploadProfilePicture(userID: String, image: UIImage) -> AnyPublisher<Result<UploadProfileResponse, ErrorResponse>, Never> {
-        let url = URL(string: "\(baseURL)/user/uploadprofile/\(userID)")!
+        let url = URL(string: "\(baseURL)/api/user/uploadprofile/\(userID)")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         let boundary = UUID().uuidString
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+        if let token = getToken() {
+            request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        }
         
         let imageData = image.jpegData(compressionQuality: 0.5)!
         let body = createBody(boundary: boundary, data: imageData, mimeType: "image/jpeg", filename: "profile.jpg")
@@ -253,14 +242,14 @@ class NetworkManager {
     }
     
     func linkToTherapist(userId: String, referenceCode: String) -> AnyPublisher<Result<Void, ErrorResponse>, Never> {
-        guard let url = URL(string: "\(baseURL)/user/linkToTherapist/\(userId)") else {
+        guard let url = URL(string: "\(baseURL)/api/user/linkToTherapist/\(userId)") else {
             return Just(.failure(ErrorResponse(error: "Invalid URL")))
                 .eraseToAnyPublisher()
         }
 
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.allHTTPHeaderFields = createHeaders()
 
         let body = ["reference_code": referenceCode]
         request.httpBody = try? JSONEncoder().encode(body)

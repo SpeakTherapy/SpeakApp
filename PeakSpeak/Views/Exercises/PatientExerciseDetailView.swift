@@ -13,6 +13,9 @@ struct PatientExerciseDetailView: View {
     let patientExercise: PatientExercise
     let showStart: Bool
     
+    @State private var currentPage = 1
+    @State private var totalPages = 0
+    
     @StateObject private var viewModel = ExerciseViewModel()
     
     func formattedDate(_ date: Date) -> String {
@@ -52,6 +55,44 @@ struct PatientExerciseDetailView: View {
                 }
             }
 
+            Spacer()
+            
+            // Show PDF navigator if a pdfURL is available
+            if let pdfURLString = exercise.pdfURL,
+               !pdfURLString.isEmpty,
+               let pdfURL = URL(string: pdfURLString) {
+                Text("PDF Document")
+                    .font(.headline)
+                    .padding(.horizontal)
+                
+                PDFNavigatorView(url: pdfURL, currentPage: $currentPage, totalPages: $totalPages)
+                    .frame(height: 400)
+                    .padding(.horizontal)
+                
+                HStack {
+                    Button("Previous") {
+                        if currentPage > 1 {
+                            currentPage -= 1
+                        }
+                    }
+                    .disabled(currentPage <= 1)
+                    
+                    Spacer()
+                    
+                    Text("Page \(currentPage) of \(totalPages)")
+                    
+                    Spacer()
+                    
+                    Button("Next") {
+                        if currentPage < totalPages {
+                            currentPage += 1
+                        }
+                    }
+                    .disabled(currentPage >= totalPages)
+                }
+                .padding(.horizontal)
+            }
+            
             Spacer()
             
             if showStart {

@@ -32,7 +32,7 @@
 		B87B80F72C4E085000F494B3 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B80F62C4E085000F494B3 /* BackButton.swift */; };
 		B87B80FA2C4E08FA00F494B3 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B80F92C4E08FA00F494B3 /* ViewExtensions.swift */; };
 		B87B80FC2C4F581500F494B3 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B80FB2C4F581500F494B3 /* KeychainManager.swift */; };
-		B87B81002C5021AD00F494B3 /* JWTDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B80FF2C5021AD00F494B3 /* JWTDecoder.swift */; };
+		B87B81002C5021AD00F494B3 /* JWTHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B80FF2C5021AD00F494B3 /* JWTHelpers.swift */; };
 		B87B81022C507F1900F494B3 /* ExerciseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B81012C507F1900F494B3 /* ExerciseManager.swift */; };
 		B87B81042C507FF300F494B3 /* ExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B81032C507FF300F494B3 /* ExerciseView.swift */; };
 		B87B81072C50817B00F494B3 /* ExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B81062C50817B00F494B3 /* ExerciseViewModel.swift */; };
@@ -64,6 +64,7 @@
 		B87B813F2C5AA7F700F494B3 /* SignupStep3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B813E2C5AA7F700F494B3 /* SignupStep3View.swift */; };
 		B87B81412C62CB3B00F494B3 /* EncryptionHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B81402C62CB3B00F494B3 /* EncryptionHelpers.swift */; };
 		B87B81432C65685700F494B3 /* AWSS3Uploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B81422C65685700F494B3 /* AWSS3Uploader.swift */; };
+		B8ED975F2D6723B300210D67 /* PDFNavigatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8ED975E2D6723B300210D67 /* PDFNavigatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,7 +114,7 @@
 		B87B80F62C4E085000F494B3 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		B87B80F92C4E08FA00F494B3 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		B87B80FB2C4F581500F494B3 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
-		B87B80FF2C5021AD00F494B3 /* JWTDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWTDecoder.swift; sourceTree = "<group>"; };
+		B87B80FF2C5021AD00F494B3 /* JWTHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWTHelpers.swift; sourceTree = "<group>"; };
 		B87B81012C507F1900F494B3 /* ExerciseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseManager.swift; sourceTree = "<group>"; };
 		B87B81032C507FF300F494B3 /* ExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
 		B87B81062C50817B00F494B3 /* ExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewModel.swift; sourceTree = "<group>"; };
@@ -146,6 +147,7 @@
 		B87B813E2C5AA7F700F494B3 /* SignupStep3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupStep3View.swift; sourceTree = "<group>"; };
 		B87B81402C62CB3B00F494B3 /* EncryptionHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionHelpers.swift; sourceTree = "<group>"; };
 		B87B81422C65685700F494B3 /* AWSS3Uploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSS3Uploader.swift; sourceTree = "<group>"; };
+		B8ED975E2D6723B300210D67 /* PDFNavigatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFNavigatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,7 +291,7 @@
 		B87B80DD2C4DB72300F494B3 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				B87B80FF2C5021AD00F494B3 /* JWTDecoder.swift */,
+				B87B80FF2C5021AD00F494B3 /* JWTHelpers.swift */,
 				B87B81402C62CB3B00F494B3 /* EncryptionHelpers.swift */,
 				B87B81422C65685700F494B3 /* AWSS3Uploader.swift */,
 			);
@@ -327,6 +329,7 @@
 				B87B812E2C58BC2100F494B3 /* CameraView.swift */,
 				B87B81332C59EE4600F494B3 /* ImagePicker.swift */,
 				B87B81372C5A9D1C00F494B3 /* CustomTopBar.swift */,
+				B8ED975E2D6723B300210D67 /* PDFNavigatorView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -514,9 +517,10 @@
 				B87B80FA2C4E08FA00F494B3 /* ViewExtensions.swift in Sources */,
 				B87B80D22C4DB42200F494B3 /* PatientExerciseModel.swift in Sources */,
 				B87B81272C58B3A000F494B3 /* PatientView.swift in Sources */,
+				B8ED975F2D6723B300210D67 /* PDFNavigatorView.swift in Sources */,
 				B87B81362C59FC2000F494B3 /* DataExtension.swift in Sources */,
 				B87B80D62C4DB44400F494B3 /* ResponseModel.swift in Sources */,
-				B87B81002C5021AD00F494B3 /* JWTDecoder.swift in Sources */,
+				B87B81002C5021AD00F494B3 /* JWTHelpers.swift in Sources */,
 				B87B81112C52ED4800F494B3 /* TherapistView.swift in Sources */,
 				B87B81022C507F1900F494B3 /* ExerciseManager.swift in Sources */,
 				B87B80F72C4E085000F494B3 /* BackButton.swift in Sources */,
@@ -732,7 +736,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tanishb.PeakSpeak;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -782,7 +786,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tanishb.PeakSpeak;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;

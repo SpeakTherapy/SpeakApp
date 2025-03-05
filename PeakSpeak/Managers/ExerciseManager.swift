@@ -38,14 +38,14 @@ class ExerciseManager {
     
     
     func getGlobalExercises() -> AnyPublisher<Result<ExerciseResponse, ErrorResponse>, Never> {
-        guard let url = URL(string: "\(baseURL)/exercises/exercises") else {
+        guard let url = URL(string: "\(baseURL)/api/exercises/exercises") else {
             return Just(.failure(ErrorResponse(error: "Invalid URL")))
                 .eraseToAnyPublisher()
         }
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.allHTTPHeaderFields = createHeaders()
         
         return URLSession.shared.dataTaskPublisher(for: request)
             .tryMap { output in
@@ -79,20 +79,31 @@ class ExerciseManager {
     
     func getTherapistExercises(therapistID: String) -> AnyPublisher<Result<ExerciseResponse, ErrorResponse>, Never> {
         // Build the URL with query parameter for therapist_id
-        guard let url = URL(string: "\(baseURL)/exercises/therapist?therapist_id=\(therapistID)") else {
+//        guard let url = URL(string: "\(baseURL)/api/exercises/therapist?therapist_id=\(therapistID)") else {
+//            return Just(.failure(ErrorResponse(error: "Invalid URL")))
+//                .eraseToAnyPublisher()
+//        }
+        guard let encodedTherapistID = therapistID.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+              let url = URL(string: "\(baseURL)/api/exercises/therapist?therapist_id=\(encodedTherapistID)") else {
             return Just(.failure(ErrorResponse(error: "Invalid URL")))
                 .eraseToAnyPublisher()
         }
 
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-
+        request.allHTTPHeaderFields = createHeaders()
+        
+        print("Fetching therapist exercises from URL: \(url.absoluteString)") // Debug log
+            
         return URLSession.shared.dataTaskPublisher(for: request)
             .tryMap { output in
                 guard let response = output.response as? HTTPURLResponse, response.statusCode == 200 else {
                     let errorResponse = try? self.jsonDecoder.decode(ErrorResponse.self, from: output.data)
                     throw errorResponse ?? ErrorResponse(error: "Unknown error")
+                }
+                // Print raw JSON for debugging:
+                if let jsonString = String(data: output.data, encoding: .utf8) {
+                    print("Therapist Exercises JSON: \(jsonString)")
                 }
                 let exerciseResponse = try self.jsonDecoder.decode(ExerciseResponse.self, from: output.data)
                 return .success(exerciseResponse)
@@ -107,10 +118,10 @@ class ExerciseManager {
     
     
     func createExercise(name: String, description: String, videoURL: String, tags: [String], isGlobal: Bool, therapistID: String) -> AnyPublisher<Result<SimpleResponse, ErrorResponse>, Never> {
-        let url = URL(string: "\(baseURL)/exercise")!
+        let url = URL(string: "\(baseURL)/api/exercise")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.allHTTPHeaderFields = createHeaders()
         
         let body: [String: Any] = ["name": name, "description": description, "tags": tags, "video_url": videoURL, "is_global": isGlobal, "therapist_id": therapistID]
         request.httpBody = try? JSONSerialization.data(withJSONObject: body)
@@ -142,14 +153,14 @@ class ExerciseManager {
     }
     
     func assignExercisesToPatient(patientID: String, therapistID: String, exerciseIDs: [String]) -> AnyPublisher<Result<Void, ErrorResponse>, Never> {
-        guard let url = URL(string: "\(baseURL)/patientexercise") else {
+        guard let url = URL(string: "\(baseURL)/api/patientexercise") else {
             return Just(.failure(ErrorResponse(error: "Invalid URL")))
                 .eraseToAnyPublisher()
         }
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.allHTTPHeaderFields = createHeaders()
         
         let body: [String: Any] = [
             "patient_id": patientID,
@@ -178,14 +189,14 @@ class ExerciseManager {
     }
     
     func getPatientExercises(patientID: String) -> AnyPublisher<Result<[PatientExerciseResponse], ErrorResponse>, Never> {
-        guard let url = URL(string: "\(baseURL)/patientexercises/\(patientID)") else {
+        guard let url = URL(string: "\(baseURL)/api/patientexercises/\(patientID)") else {
             return Just(.failure(ErrorResponse(error: "Invalid URL")))
                 .eraseToAnyPublisher()
         }
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.allHTTPHeaderFields = createHeaders()
         
         return URLSession.shared.dataTaskPublisher(for: request)
             .tryMap { output in
@@ -218,14 +229,14 @@ class ExerciseManager {
     }
     
     func deletePatientExercise(patientExerciseID: String) -> AnyPublisher<Result<Void, ErrorResponse>, Never> {
-        guard let url = URL(string: "\(baseURL)/patientexercise/\(patientExerciseID)") else {
+        guard let url = URL(string: "\(baseURL)/api/patientexercise/\(patientExerciseID)") else {
             return Just(.failure(ErrorResponse(error: "Invalid URL")))
                 .eraseToAnyPublisher()
         }
         
         var request = URLRequest(url: url)
         request.httpMethod = "DELETE"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.allHTTPHeaderFields = createHeaders()
         
         return URLSession.shared.dataTaskPublisher(for: request)
             .tryMap { output in
@@ -247,10 +258,10 @@ class ExerciseManager {
     }
     
     func getUploadURL(patientExerciseID: String, aesKey: String) -> AnyPublisher<UploadResponse, Error> {
-        let url = URL(string: "\(baseURL)/getuploadurl/\(patientExerciseID)")!
+        let url = URL(string: "\(baseURL)/api/getuploadurl/\(patientExerciseID)")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.allHTTPHeaderFields = createHeaders()
         
         let requestBody: [String: String] = ["aes_key": aesKey]
         do {
@@ -277,9 +288,10 @@ class ExerciseManager {
     }
     
     func getDownloadURL(patientExerciseID: String) -> AnyPublisher<DownloadResponse, Error> {
-        let url = URL(string: "\(baseURL)/getdownloadurl/\(patientExerciseID)")!
+        let url = URL(string: "\(baseURL)/api/getdownloadurl/\(patientExerciseID)")!
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
+        request.allHTTPHeaderFields = createHeaders()
         
         return URLSession.shared.dataTaskPublisher(for: request)
             .tryMap { data, response -> DownloadResponse in

@@ -85,10 +85,12 @@ class ExerciseViewModel: ObservableObject {
             .sink { [weak self] result in
                 switch result {
                 case .success(let exerciseResponse):
+                    print("Therapist exercises fetched: \(exerciseResponse.exercises)")
                     self?.therapistExercises = exerciseResponse.exercises
                     self?.exercises = exerciseResponse.exercises
                     self?.fetchError = nil
                 case .failure(let error):
+                    print("Error fetching therapist exercises: \(error.error)")
                     self?.fetchError = error.error
                 }
             }

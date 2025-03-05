@@ -12,6 +12,7 @@ struct Exercise: Codable, Identifiable {
     let name: String
     let description: String
     let videoURL: String?
+    let pdfURL: String?
     let tags: [ExerciseTags]
     let createdAt: Date
     let updatedAt: Date
@@ -24,6 +25,7 @@ struct Exercise: Codable, Identifiable {
         case name
         case description
         case videoURL = "video_url"
+        case pdfURL = "pdf_url"
         case tags = "tags"
         case createdAt = "created_at"
         case updatedAt = "updated_at"

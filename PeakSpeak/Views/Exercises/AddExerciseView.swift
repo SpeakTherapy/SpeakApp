@@ -95,6 +95,7 @@ extension AddExerciseView {
     /// Uses the same caching logic as your main ExerciseView to avoid redundant calls.
     private func fetchData(for category: ExerciseFilter) {
         guard let user = AuthManager.shared.user else { return }
+        viewModel.exercises = []
         
         switch category {
         case .global:
@@ -124,6 +125,7 @@ extension AddExerciseView {
     private func refreshBasedOnCategory(_ category: ExerciseFilter) {
         guard let user = AuthManager.shared.user else { return }
         
+        viewModel.exercises = []
         switch category {
         case .global:
             // Force a new fetch from server

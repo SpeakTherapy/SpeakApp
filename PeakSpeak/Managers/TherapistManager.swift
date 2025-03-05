@@ -41,14 +41,14 @@ class TherapistManager {
     
     
     func getPatients(therapistID: String) -> AnyPublisher<Result<[User], ErrorResponse>, Never> {
-        guard let url = URL(string: "\(baseURL)/patients/\(therapistID)") else {
+                
+        guard let url = URL(string: "\(baseURL)/api/patients") else {
             return Just(.failure(ErrorResponse(error: "Invalid URL")))
                 .eraseToAnyPublisher()
         }
-        
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.allHTTPHeaderFields = createHeaders()
         
         return URLSession.shared.dataTaskPublisher(for: request)
             .tryMap { output in

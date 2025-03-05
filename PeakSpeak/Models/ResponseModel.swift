@@ -43,6 +43,11 @@ struct ErrorResponse: Codable, Error {
 }
 
 struct LoginResponse: Codable {
+    let token: String
+    let user: UserResponse
+}
+
+struct UserResponse: Codable {
     let id: String
     let firstName: String
     let lastName: String
@@ -51,8 +56,6 @@ struct LoginResponse: Codable {
     let role: String
     let referenceCode: String?
     let profileImage: String?
-    let token: String
-    let refreshToken: String
     let createdAt: Date
     let updatedAt: Date
     let userId: String
@@ -66,8 +69,6 @@ struct LoginResponse: Codable {
         case role
         case referenceCode = "reference_code"
         case profileImage = "profile_image"
-        case token
-        case refreshToken = "refresh_token"
         case createdAt = "created_at"
         case updatedAt = "updated_at"
         case userId = "user_id"
